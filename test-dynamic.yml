@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: debug test group before add
+    debug: var=groups['test']
+  - name: debug myvar before add
+    debug: var=myvar
+  - name: add localhost to test group
+    add_host: name=localhost groups=test
+  - name: debug test group after add
+    debug: var=groups['test']
+  - name: debug myvar after add
+    debug: var=myvar
+

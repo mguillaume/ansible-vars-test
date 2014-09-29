@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: debug test group before roles
+    debug: var=groups['test']
+  - name: debug myvar before roles
+    debug: var=myvar
+
+- hosts: test
+  gather_facts: no
+  roles:
+  - main
+
